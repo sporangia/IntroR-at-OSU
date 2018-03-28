@@ -1,38 +1,25 @@
 ---
-title: "Before The Workshop"
+title: "Before Class"
 ---
 
-Workshop Outcomes
+Exercise Learning Outcomes
 -----------------
 
-In this workshop, I expect to present enough information to get you started on 
-your way to learning R. Because this is a three hour workshop, my goal is to 
-demonstrate a simple analysis in R, emphasizing problem solving and 
-troubleshooting. By the end of the workshop you should have just enough
-background to be able to learn more.
+In this two-part exercise, I expect to present enough information to get you started on your way to learning R. Because each class period is a 1 hour 15 minutes, my goal is to introduce you to R and then show you an example of how to analyze our data in R, emphasizing problem solving and troubleshooting. By the end of the exercise you should have just enough background to be able to learn more. If you already know some R, please assist people sitting next to you as questions or issues arise.
 
 Required Materials
 ------------------
 
-Again, because this is a three hour workshop, I ask that you come prepared with
-a laptop that has the most recent versions of [R] and [RStudio] installed, and
-our [workshop materials] downloaded to your Desktop.  Please note that a new 
-version of RStudio was released on October 9th, 2017, so make sure you have 
-the most recent version before the workshop.  **Due to time constraints, I 
-cannot provide installation assistance on the day of the workshop. Those who 
-are not prepared for the workshop may be asked work with another participant to 
-follow along**.
+Again, because we only have two class periods, I ask that you come prepared with a laptop that has the most recent versions of [R] and [RStudio] installed.  Please note that a new version of RStudio was released on October 9th, 2017, so make sure you have the most recent version before the workshop.  **Due to time constraints, I cannot provide installation assistance during class. Those who are not prepared for the class may be asked work with another participant to follow along**.
 
 ### Installation
 
-Even if you already have [R] installed on your system, you really should make
-sure its up to date. This ensures that there are no problems due to outdated
-software. For more details about installing [R], [RStudio], and keeping
-everything up to date, UBC's [STAT545] page is an excellent resource.
+Even if you already have [R] installed on your system, you really should make sure its up to date. This ensures that there are no problems due to outdated software. For more details about installing [R], [RStudio], and keeping everything up to date, UBC's [STAT545] page is an excellent resource.
 
  - [R]
  - [RStudio]
- - [Workshop Materials] (zip file; unzip to Desktop)
+ - [Exercise Materials] (zip file; unzip to Desktop)
+ - Data set from class << will be used in Tuesday's exercise
  - (Once you've installed R) packages "[tidyverse]" and "[agricolae]"
 
 ### Verification
@@ -48,19 +35,19 @@ Once you have installed [R], we should verify that you have the correct version.
     (If the result is `[1] FALSE`, please quit R and try the installation again)
  
  
-### Workshop Materials
+### Exercise Materials
 
-Our [workshop materials] is a zip file that contains a folder called 
-`IntroR-at-OSU-master/` with the folowing structure:
+The [exercise materials] is a zip file that contains a folder called 
+`IntroR-LesionExercise/` with the folowing structure:
 
 ```
 .
-├── IntroR-at-OSU.Rproj
+├── IntroR-LesionExercise.Rproj
 ├── LICENSE
 ├── Makefile
-├── Part1-Introduction.R
-├── Part2-Analysis.R
-├── Part3-Visualization.R
+├── Introduction.R
+├── Analysis.R
+├── Visualization.R
 ├── README.md
 ├── data/
 │   ├── FungicideExample.csv
@@ -69,11 +56,7 @@ Our [workshop materials] is a zip file that contains a folder called
     └── ...
 ```
 
-I am providing the R scripts for the workshop. We will be live-coding some
-scripts, and **I encourage you to follow along by creating your own R scripts**
-so that you can get comfortable typing these commands. For those who feel the
-pace is too fast, or are unable to type the commands, feel free to execute the
-code in these scripts to follow along.
+I am providing the R scripts for the exercise. We will be live-coding some scripts, and **I encourage you to follow along by creating your own R scripts** so that you can get comfortable typing these commands. For those who feel the pace is too fast, or are unable to type the commands, feel free to execute the code in these scripts to follow along.
 
 ### Installing Packages
 

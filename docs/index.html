@@ -11,7 +11,7 @@
 
 
 
-<title>R for Plant Pathologists</title>
+<title>Intro to R for Plant Pathology</title>
 
 <script src="site_libs/jquery-1.11.3/jquery.min.js"></script>
 <meta name="viewport" content="width=device-width, initial-scale=1" />
@@ -23,8 +23,8 @@
 <link href="site_libs/tocify-1.9.1/jquery.tocify.css" rel="stylesheet" />
 <script src="site_libs/tocify-1.9.1/jquery.tocify.js"></script>
 <script src="site_libs/navigation-1.1/tabsets.js"></script>
-<link href="site_libs/highlightjs-1.1/textmate.css" rel="stylesheet" />
-<script src="site_libs/highlightjs-1.1/highlight.js"></script>
+<link href="site_libs/highlightjs-9.12.0/textmate.css" rel="stylesheet" />
+<script src="site_libs/highlightjs-9.12.0/highlight.js"></script>
 
 <style type="text/css">code{white-space: pre;}</style>
 <style type="text/css">
@@ -33,10 +33,12 @@
   }
 </style>
 <script type="text/javascript">
-if (window.hljs && document.readyState && document.readyState === "complete") {
-   window.setTimeout(function() {
-      hljs.initHighlighting();
-   }, 0);
+if (window.hljs) {
+  hljs.configure({languages: []});
+  hljs.initHighlightingOnLoad();
+  if (document.readyState && document.readyState === "complete") {
+    window.setTimeout(function() { hljs.initHighlighting(); }, 0);
+  }
 }
 </script>
 
@@ -276,7 +278,7 @@ div.tocify {
         <span class="icon-bar"></span>
         <span class="icon-bar"></span>
       </button>
-      <a class="navbar-brand" href="index.html">Intro to R</a>
+      <a class="navbar-brand" href="index.html">Intro to R for Residual Fungicide Analysis</a>
     </div>
     <div id="navbar" class="navbar-collapse collapse">
       <ul class="nav navbar-nav">
@@ -285,37 +287,22 @@ div.tocify {
 </li>
 <li class="dropdown">
   <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">
-    Workshop
+    Exercise
      
     <span class="caret"></span>
   </a>
   <ul class="dropdown-menu" role="menu">
     <li>
-      <a href="installation.html">Before the Workshop (Installation)</a>
+      <a href="installation.html">Before Class (Installation)</a>
     </li>
     <li>
-      <a href="Part1-Introduction.html">Part 1: Introduction to R</a>
+      <a href="Part1-Introduction.html">Introduction to R</a>
     </li>
     <li>
-      <a href="Part2-Analysis.html">Part 2: First Analysis</a>
+      <a href="coming-soon.html">Example Data Analysis</a>
     </li>
     <li>
-      <a href="Part3-Visualization.html">Part 3: Reshaping and Visualization</a>
-    </li>
-  </ul>
-</li>
-<li class="dropdown">
-  <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">
-    About
-     
-    <span class="caret"></span>
-  </a>
-  <ul class="dropdown-menu" role="menu">
-    <li>
-      <a href="data.html">Data Sets</a>
-    </li>
-    <li>
-      <a href="about.html">About</a>
+      <a href="coming-soon.html">Reshaping and Visualization</a>
     </li>
   </ul>
 </li>
@@ -326,12 +313,6 @@ div.tocify {
     <span class="caret"></span>
   </a>
   <ul class="dropdown-menu" role="menu">
-    <li>
-      <a href="quiz.html">Workshop Quiz</a>
-    </li>
-    <li>
-      <a href="https://goo.gl/forms/iEDcbFx5Nhb4l3083">Exit Survey</a>
-    </li>
     <li>
       <a href="refs.html">Useful Tools/Links/References</a>
     </li>
@@ -349,17 +330,12 @@ div.tocify {
 
 
 
-<h1 class="title toc-ignore">R for Plant Pathologists</h1>
+<h1 class="title toc-ignore">Intro to R for Plant Pathology</h1>
 
 </div>
 
 
-<p>An introduction to R for plant pathologists written by Drs. Sydney E. Everhart and Zhian N. Kamvar</p>
-<p>This repository is intended to serve as an additional resource for short workshops given at Univeristy of Nebraska and The 2017 North-Central American Phytopathological Society Meeting. The source code can be found at <a href="https://github.com/everhartlab/IntroR-at-OSU" class="uri">https://github.com/everhartlab/IntroR-at-OSU</a>.</p>
-<div id="about" class="section level2">
-<h2>About</h2>
-<p>This introduction to R is designed to be a companion to a workshop lasting 3 hours introducing plant pathologists to the basics of R by using a <a href="http://www.apsnet.org/edcenter/advanced/topics/EcologyAndEpidemiologyInR/DiseaseProgress/Pages/StripeRust.aspx" title="APS Education Center: Using the area under the disease progress curve to compare disease severity">real world stripe rust example</a>.</p>
-</div>
+<p>This introduction to R for plant pathology was originally written as a workshop by Drs. Sydney E. Everhart and Zhian N. Kamvar, and modified to the current form for the 2018 course PLPT 802: Ecology &amp; Management of Plant Pathogens. We will first cover the basics of using R and then learn how to analyze data that we collected during class from leaf images. The source code for this website and analyses can be found at: <a href="https://github.com/everhartlab/IntroR-for-PLPT802" class="uri">https://github.com/everhartlab/IntroR-for-PLPT802</a>.</p>
 <div id="goals" class="section level2">
 <h2>Goals</h2>
 <p>As a result of taking this workshop you should be able to:</p>
@@ -372,19 +348,6 @@ div.tocify {
 <li>visualize data</li>
 <li>troubleshoot commmon problems</li>
 </ul>
-</div>
-<div id="website" class="section level2">
-<h2>Website</h2>
-<p>This website is meant to serve as a companion to the workshop. The pages located in the <strong>Workshop</strong> tab are rendered versions of R scripts located in the top level of <a href="https://github.com/everhartlab/IntroR-at-OSU" class="uri">https://github.com/everhartlab/IntroR-at-OSU</a>. As the workshop is designed to be interactive where the participants are given some control over what direction we should take the analyses, the scripts here are only to serve as guidelines.</p>
-<p>These scripts follow these conventions:</p>
-<ul>
-<li>R code is presented how it would appear in the R console with the first line prefixed with <code>&gt;</code> and subsequent lines prefixed with <code>+</code>. The intent is to encourage the user to type the commands instead of copy and paste.</li>
-<li>There will be instances where the command is a <code>stop()</code> command. These are points in the workshop where we stop the participants and ask them to talk amongst themselves, take a short survey, or find information using R’s help function.</li>
-</ul>
-<p>The website located at <a href="http://everhartlab.github.io/IntroR-at-OSU" class="uri">http://everhartlab.github.io/IntroR-at-OSU</a> can be build via the <code>make</code> program:</p>
-<pre class="make"><code>make clean # run this to build the site from scratch
-make</code></pre>
-<p>Note: if the README.md is changed, make will force-update the index.Rmd and in turn force update the corresponding HTML.</p>
 </div>
 
 <br>

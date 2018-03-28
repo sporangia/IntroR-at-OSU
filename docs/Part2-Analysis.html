@@ -23,8 +23,8 @@
 <link href="site_libs/tocify-1.9.1/jquery.tocify.css" rel="stylesheet" />
 <script src="site_libs/tocify-1.9.1/jquery.tocify.js"></script>
 <script src="site_libs/navigation-1.1/tabsets.js"></script>
-<link href="site_libs/highlightjs-1.1/textmate.css" rel="stylesheet" />
-<script src="site_libs/highlightjs-1.1/highlight.js"></script>
+<link href="site_libs/highlightjs-9.12.0/textmate.css" rel="stylesheet" />
+<script src="site_libs/highlightjs-9.12.0/highlight.js"></script>
 
 <style type="text/css">code{white-space: pre;}</style>
 <style type="text/css">
@@ -33,10 +33,12 @@
   }
 </style>
 <script type="text/javascript">
-if (window.hljs && document.readyState && document.readyState === "complete") {
-   window.setTimeout(function() {
-      hljs.initHighlighting();
-   }, 0);
+if (window.hljs) {
+  hljs.configure({languages: []});
+  hljs.initHighlightingOnLoad();
+  if (document.readyState && document.readyState === "complete") {
+    window.setTimeout(function() { hljs.initHighlighting(); }, 0);
+  }
 }
 </script>
 
@@ -276,7 +278,7 @@ div.tocify {
         <span class="icon-bar"></span>
         <span class="icon-bar"></span>
       </button>
-      <a class="navbar-brand" href="index.html">Intro to R</a>
+      <a class="navbar-brand" href="index.html">Intro to R and Residual Fungicide Analysis</a>
     </div>
     <div id="navbar" class="navbar-collapse collapse">
       <ul class="nav navbar-nav">
@@ -285,22 +287,22 @@ div.tocify {
 </li>
 <li class="dropdown">
   <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">
-    Workshop
+    Exercise
      
     <span class="caret"></span>
   </a>
   <ul class="dropdown-menu" role="menu">
     <li>
-      <a href="installation.html">Before the Workshop (Installation)</a>
+      <a href="installation.html">Before Class (Installation)</a>
     </li>
     <li>
-      <a href="Part1-Introduction.html">Part 1: Introduction to R</a>
+      <a href="Part1-Introduction.html">Introduction to R</a>
     </li>
     <li>
-      <a href="Part2-Analysis.html">Part 2: First Analysis</a>
+      <a href="coming-soon.html">Example Data Analysis</a>
     </li>
     <li>
-      <a href="Part3-Visualization.html">Part 3: Reshaping and Visualization</a>
+      <a href="coming-soon.html">Reshaping and Visualization</a>
     </li>
   </ul>
 </li>
@@ -314,9 +316,6 @@ div.tocify {
     <li>
       <a href="data.html">Data Sets</a>
     </li>
-    <li>
-      <a href="about.html">About</a>
-    </li>
   </ul>
 </li>
 <li class="dropdown">
@@ -326,12 +325,6 @@ div.tocify {
     <span class="caret"></span>
   </a>
   <ul class="dropdown-menu" role="menu">
-    <li>
-      <a href="quiz.html">Workshop Quiz</a>
-    </li>
-    <li>
-      <a href="https://goo.gl/forms/iEDcbFx5Nhb4l3083">Exit Survey</a>
-    </li>
     <li>
       <a href="refs.html">Useful Tools/Links/References</a>
     </li>
@@ -366,16 +359,19 @@ div.tocify {
 <h2>Part I: Working Directories</h2>
 <p>A working directory is the folder on your computer where you are currently working. You can find out your current working directory by typing <code>getwd()</code></p>
 <pre class="r"><code>&gt; getwd()</code></pre>
-<pre><code>[1] &quot;/Users/severhart2/Documents/IntroR-at-OSU&quot;</code></pre>
+<pre><code>[1] &quot;/Users/severhart2/Documents/IntroR-for-PLPT802&quot;</code></pre>
 <p>If you’ve downloaded and un-zipped this directory to your desktop, you might see something like <code>/Users/&lt;yourname&gt;/Desktop/IntroR</code>. This is the default place where R will begin reading and writing files. For example, you can use the function <code>list.files()</code> to view the files in your current working directory. These are the same files that we downloaded earlier. If you’re using Rstudio, you can compare the file list with the “Files” tab in the bottom right panel.</p>
 <p>In order to use <code>list.files()</code>, we should provide it with a file path. We can provide it a “.”, which means “here” to most computer programs.</p>
 <pre class="r"><code>&gt; list.files(&quot;.&quot;)</code></pre>
-<pre><code>[1] &quot;data&quot;                  &quot;docs&quot;                  &quot;IntroR-at-OSU.Rproj&quot;  
-[4] &quot;LICENSE&quot;               &quot;Makefile&quot;              &quot;Part1-Introduction.R&quot; 
-[7] &quot;Part2-Analysis.R&quot;      &quot;Part3-Visualization.R&quot; &quot;README.md&quot;            </code></pre>
+<pre><code> [1] &quot;data&quot;                     &quot;docs&quot;                    
+ [3] &quot;fig2recreation.r&quot;         &quot;IntroR-for-PLPT802.Rproj&quot;
+ [5] &quot;LICENSE&quot;                  &quot;Makefile&quot;                
+ [7] &quot;Part1-Introduction.R&quot;     &quot;Part2-Analysis.R&quot;        
+ [9] &quot;Part3-Visualization.R&quot;    &quot;README.md&quot;               </code></pre>
 <p>You can see that the first entry in here is “data”. This is where we’ve placed the fungicide example data.</p>
 <pre class="r"><code>&gt; list.files(&quot;data&quot;)</code></pre>
-<pre><code>[1] &quot;FungicideExample.csv&quot; &quot;README.md&quot;           </code></pre>
+<pre><code>[1] &quot;FungicideExample.csv&quot;            &quot;README.md&quot;                      
+[3] &quot;Results_combined-class-2017.csv&quot;</code></pre>
 </div>
 <div id="part-ii-reading-in-data" class="section level2">
 <h2>Part II: Reading in Data</h2>

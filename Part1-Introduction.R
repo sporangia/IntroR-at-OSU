@@ -184,17 +184,17 @@ length(name)
 
 # Let's compare this to a vector that contains only numeric data. For this 
 # example, let's create three objects to represent today's date in numbers for
-# the month (05), day (24), and year (2017).
+# the month (03), day (29), and year (2018).
 
-month <- 05
-day <- 24
-year <- 2017
+month <- 03
+day <- 29
+year <- 2018
 
 # combine those three objects using the *combine* function:
 today <- c(month, day, year)
 
 # Inspect this object by typing the name `today` at the command line. You'll see
-# that R has eliminated the zero that preceeds the 5 and has kept the order we 
+# that R has eliminated the zero that preceeds the 3 and has kept the order we 
 # provided for these elements in the vector.  Let's take a look at the structure of
 # today.
 
@@ -203,11 +203,11 @@ str(today)
 # You'll notice that the vector has three elements [1:3] and it contains only 
 # numeric data.
 # 
-# Let's do the same thing using the name May for month and see how that changes
+# Let's do the same thing using the name March for month and see how that changes
 # our vector. Notice that we are not modifying the object *month*, we are simply
-# combining our two existing objects with the word "May".
+# combining our two existing objects with the word "March".
 
-c("May", day, year)   
+c("March", day, year)   
 
 # In this case we didn't re-assign the object named `today`. To inspect the 
 # structure of this vector, we can wrap the statement within the str() function,
@@ -215,8 +215,8 @@ c("May", day, year)
 # character) using the function class().  Don't forget to use the up-arrow to
 # access the last like that you ran!
 
-str(c("May", day, year)) # this shows us the structure of the object
-class(c("May", day, year))
+str(c("March", day, year)) # this shows us the structure of the object
+class(c("March", day, year))
 
 # Notice how R is trying to keep our data organized according to type.  Rather
 # than coding this vector as containing numbers and characters, it has decided
@@ -227,9 +227,9 @@ class(c("May", day, year))
 # 
 # ```
 #   day   month   year
-#   1     5       2017
-#   2     5       2017
-#   3     5       2017
+#   1     3       2018
+#   2     3       2018
+#   3     3       2018
 #   ...
 # ```
 # 
@@ -249,11 +249,11 @@ day <- 1:31
 # to repeat each of them a total of 31 times because we need to repeat each, 
 # once for each day.
 # 
-# We can easily repeat the number 5 a total of 31 times using the function 
+# We can easily repeat the number 3 a total of 31 times using the function 
 # `rep()`, specifying how many `times` we should repeat this object. Let's
-# assign `5` to `month` and modify the object month to contain 31 copies.
+# assign `3` to `month` and modify the object month to contain 31 copies.
 
-month <- 5
+month <- 3
 month <- rep(month, times = 31) 
 
 # Let's check to make sure that month is correct using the function `length()`:
@@ -263,22 +263,22 @@ length(month)
 # There are 31 elements in this vector and we can inspect individual elements in the
 # vector based on their ordered position using square brackets:
 
-day[24]  
-month[24] # the number inside the brackets corresponds to location of element in list, not value
+day[29]  
+month[29] # the number inside the brackets corresponds to location of element in list, not value
 
-# In this case, the 24th element in `day` is 24, and the 24th element in `month` is 5
+# In this case, the 29th element in `day` is 29, and the 29th element in `month` is 3
 # which confirms that we created this correctly.
 # 
 # > Type `day[32]` into your R console. What do you get? What does it mean? Ask
 # > yourself the question, "Are there any months with 32 days?"
 # 
-# We can create the object `year` to contain 31 repeats of 2017, however, this 
+# We can create the object `year` to contain 31 repeats of 2018, however, this 
 # time, let's say we wanted to make sure that this object was always the same
 # length as the number of days we have in a month. Instead of specifying `31`,
 # we can simply get that information using the `length()` function. Here, we'll
 # replace `31` with `length(day)`, which is equivalent.
 
-year <- rep(2017, times = length(day))
+year <- rep(2018, times = length(day))
 year
 length(year)
 
@@ -297,9 +297,9 @@ length(year)
 # 
 # ```
 #   day   month   year
-#   1     5       2017
-#   2     5       2017
-#   3     5       2017
+#   1     3       2018
+#   2     3       2018
+#   3     3       2018
 #   ...
 # ```
 # 
@@ -307,39 +307,39 @@ length(year)
 # function will create columns out of vectors that are all the same length. In
 # the function, we just have to specify the columns.
 
-May <- data.frame(day = day, month = month, year = year)
+march <- data.frame(day = day, month = month, year = year)
 
 # Let's inspect this new object in the same way as vectors:
 
-May
-length(May)
+March
+length(March)
 
-# Using the `length()` function, we see it says 3. This is because `May` has three
+# Using the `length()` function, we see it says 3. This is because `March` has three
 # columns: day, month, and year. A data frame is a two-dimensional object which
 # stores its information in rows and columns. 
 # 
 # Because this is a 2-dimensional object, we can inspect the dimensions using
 # the `dim()` function:
 
-dim(May)
+dim(March)
 
 # This tells us that we have 31 rows and 3 columns. R also provides the `nrow()`
 # and `ncol()` functions to make it easier to remember which is which:
 
-nrow(May)
-ncol(May)
+nrow(March)
+ncol(March)
 
 # What happens when we use the `str()` function?
 
-str(May)
+str(March)
 
 # We can see that it's listing the columns we have in our table and showing us
 # how they are represented. Notice the `$` to the left of each column name, 
 # this is how we access the columns of the data frame:
 
-May$day
-May$month
-May$year
+March$day
+March$month
+March$year
 
 # You can see that these are the same as the vectors we created earlier.
 # 
@@ -347,29 +347,29 @@ May$year
 # obect.  A quick way to look at the top of the object is with the `head()`
 # function and if we wanted to look at the bottom, we would use `tail()`.
 
-head(may)  # if this didn't work, double-check that you spelled the object name correctly
+head(March)  # if this didn't work, double-check that you spelled the object name correctly
 
 # Now that we have our table, the question becomes, how the heck do we inspect
 # different elements?
 # 
-# Just like we can inspect the 24th element in the `day` vector using `day[24]`,
+# Just like we can inspect the 29th element in the `day` vector using `day[29]`,
 # we can also use the brackets to subset a table, the only catch is that we have
 # to use the coordinates of the row(s) and the column(s) we want. We can do this
 # by specifying `[row, column]`. These are analagous to X and Y Cartesian 
-# coordinates. Let's take a look at the elements in the 24th row, separately:
+# coordinates. Let's take a look at the elements in the 29th row, separately:
 
-May[24, 1] # day
-May[24, "month"] # you can use characters when the elements are named!
-May[24, 3] # year
+March[29, 1] # day
+March[29, "month"] # you can use characters when the elements are named!
+March[29, 3] # year
 
 # If we don't specify a dimension, R will give us the entire contents of that
 # dimension. Let's look at the row that contains today's date:
 
-May[24, ]
+March[29, ]
 
 # You can also use this to access just one column of the matrix.  Let's look at month:
 
-May[, 2]
+March[, 2]
 
 # Notice, however that this result now appears to be a a vector! This is because
 # of a sneaky default option called `drop = TRUE`. R tries to "help" by removing
@@ -377,38 +377,38 @@ May[, 2]
 # to keep this as a data frame, you can turn off this option *inside the 
 # brackets*:
 
-May[, 2, drop = FALSE]
+March[, 2, drop = FALSE]
 
-# Now that we've inspected the object `May`, let's create the same thing for
-# the month of June. How should we do this?
+# Now that we've inspected the object `March`, let's create the same thing for
+# the month of April. How should we do this?
 # 
 # One option would be to create new obects for day, month, and year and combine
-# them just like we did for May.  What is the simplest method to do this, using
+# them just like we did for March.  What is the simplest method to do this, using
 # the fewest number of steps? 
 # 
-# We can simply make a copy of `May` with 30 days.
+# We can simply make a copy of `March` with 30 days.
 
-June <- May[1:30, , drop = FALSE]  # Created new object called June that used rows 1:30
+April <- March[1:30, , drop = FALSE]  # Created new object called April that used rows 1:30
 
 # Inspect what we have now:
 
-str(June)
-tail(June) # we should have 30 days.
+str(April)
+tail(April) # we should have 30 days.
 
-# We need to change the month column so that it says 6 instead of 5, how can we
+# We need to change the month column so that it says 4 instead of 3, how can we
 # do this?  Let's just look at the column first:
 
-June$month
+April$month
 
 # We need to add 1 to each of these values, so let's try that!
 
-June$month + 1
+April$month + 1
 
-# This worked, so now we just need to replace values in June[,2] with the new
+# This worked, so now we just need to replace values in April[,2] with the new
 # expression:
 
-June$month <- June$month + 1    # Did it work?
-str(June)
+April$month <- April$month + 1    # Did it work?
+str(April)
 
 # Let's combine both of these tables into one. Of course, now that we have two
 # dimensions, there are two ways we can combine them, by rows or by columns. R
@@ -416,13 +416,13 @@ str(June)
 # `cbind()` which bind together rows and columns, respectively.  Which one
 # should we use?  If you're unsure, try both!
 
-cbind(May, June)
-rbind(May, June)
+cbind(March, April)
+rbind(March, April)
 
 # Notice how cbind gave us an error.  What happened?  Looks like rbind worked,
 # so let's assign that to a new object:
 
-spring <- rbind(May, June)
+spring <- rbind(March, April)
 
 # Inspect this object to ensure it was made correctly. 
 
@@ -435,32 +435,32 @@ tail(spring)
 # we know what day of the week it is. We want it to look like this:
 # ```
 #   day   month   year  wkday
-#   1     "May"   2017  "Mon"
-#   2     "May"   2017  "Tues"
-#   3     "May"   2017  "Wed"
+#   1     "March"   2018  "Mon"
+#   2     "March"   2018  "Tues"
+#   3     "March"   2018  "Wed"
 #   ...
 # ```
 # 
-# Months need to be changed from the number 5 to "May" and from 6 to "June" in
+# Months need to be changed from the number 3 to "March" and from 4 to "April" in
 # the second column.  Let's first look at the month column.
 
 spring$month
 
-# We want to specify only the cells in this list that are 5. We know that rows 1
-# to 31 contain 5's and the rest contain 6's, which means we can inspect
+# We want to specify only the cells in this list that are 3. We know that rows 1
+# to 31 contain 3's and the rest contain 4's, which means we can inspect
 # those rows in the object spring:
 
-spring[1:31, "month"]     # May
-spring[-c(1:31), "month"] # June
+spring[1:31, "month"]     # March
+spring[-c(1:31), "month"] # April
 
 # 
 # > Notice that we used `-c(1:31)`, what do you think this is doing? Why would 
-# > this give us the values for the month of June?
+# > this give us the values for the month of April?
 # 
 # We can use the `ifelse()` function to replace the values in our column. This
 # function produces a new vector based on a condition specified for another
 # vector. For example, if we graded students on a scale from 1 to 10 where 
-# anything above 5 was a passing grade, we could create a pass/fail vector like
+# anything above 3 was a passing grade, we could create a pass/fail vector like
 # so:
 
 grades <- data.frame(grade = 1:10)
@@ -469,10 +469,10 @@ grades$eval <- ifelse(grades$grade > 5, yes = "pass", no = "fail")
 grades
 
 # We can do the same thing with our `spring` data frame, except this time, we
-# want to say if the month is 5, then it's May, otherwise, we call it June:
+# want to say if the month is 3, then it's March, otherwise, we call it April:
 
-ifelse(spring$month == 5, yes = "May", no = "June")
-spring$month <- ifelse(spring$month == 5, yes = "May", no = "June")
+ifelse(spring$month == 3, yes = "March", no = "April")
+spring$month <- ifelse(spring$month == 3, yes = "March", no = "April")
 
 # > Notice that we had to use `==` to indicate equality. This is so that R 
 # > doesn't get confused and assume we are using the argument assignment, `=`.
@@ -488,23 +488,23 @@ class(spring)
 # 
 # ```
 #   day   month   year  wkday
-#   1     "May"   2017  "Mon"
-#   2     "May"   2017  "Tues"
-#   3     "May"   2017  "Wed"
+#   1     "March"   2018  "Thurs"
+#   2     "March"   2018  "Fri"
+#   3     "March"   2018  "Sat"
 #   ...
 # ```
 # 
 # How should we do this, using the fewest number of steps?
 # 
 # 
-# We know that this column will repeat "Mon", "Tues", "Wed", "Thurs", "Fri", 
-# "Sat", "Sun" (since May starts on a Monday this year). We also know that we
+# We know that this column will repeat "Thurs", "Fri", "Sat", "Sun", "Mon",
+# "Tues", "Wed" (since March starts on a Thursday this year). We also know that we
 # need that list to repeat until the total length of the list is equal to the
-# number of days in May and June, which can be determined by using the `nrow()`
+# number of days in March and April, which can be determined by using the `nrow()`
 # function. 
 # 
 
-eachday <- c("Mon", "Tues", "Wed", "Thurs", "Fri", "Sat", "Sun")
+eachday <- c("Thurs", "Fri", "Sat", "Sun", "Mon", "Tues", "Wed")
 wkday   <- rep(eachday, times = nrow(spring))
 wkday
 

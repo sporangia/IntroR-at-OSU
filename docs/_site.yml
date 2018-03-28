@@ -1,32 +1,22 @@
 name: "R in Plant Pathology"
 output_dir: "."
 navbar:
-  title: "Intro to R"
+  title: "Intro to R for Residual Fungicide Analysis"
   left:
     - text: "Home"
       href: index.html
-    - text: "Workshop"
+    - text: "Exercise"
       menu:
-        - text: "Before the Workshop (Installation)"
+        - text: "Before Class (Installation)"
           href: installation.html
-        - text: "Part 1: Introduction to R"
+        - text: "Introduction to R"
           href: Part1-Introduction.html
-        - text: "Part 2: First Analysis"
-          href: Part2-Analysis.html
-        - text: "Part 3: Reshaping and Visualization"
-          href: Part3-Visualization.html
-    - text: "About"
-      menu:
-        - text: "Data Sets"
-          href: data.html
-        - text: "About"
-          href: about.html
+        - text: "Example Data Analysis"
+          href: coming-soon.html
+        - text: "Reshaping and Visualization"
+          href: coming-soon.html
     - text: "Links"
       menu:
-        - text: "Workshop Quiz"
-          href: quiz.html
-        - text: "Exit Survey"
-          href: https://goo.gl/forms/iEDcbFx5Nhb4l3083
         - text: "Useful Tools/Links/References"
           href: refs.html
 output:
